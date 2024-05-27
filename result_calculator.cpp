@@ -24,7 +24,7 @@ using namespace std;
 #endif 
 
 #ifndef MARKS_MAX
-    #define MARKS_MIN 100
+    #define MARKS_MAX 100
 #endif 
 
 #ifndef TOTAL_SUBJECT
@@ -41,7 +41,20 @@ class Student
         float electronics;
         float hindi;
         float english;
+        
     public:
+    
+    //default Constructor
+    Student()
+    {
+        this->maths = 0;
+        this->physics = 0;
+        this->electronics = 0;
+        this->hindi = 0;
+        this->english = 0;
+        
+    }
+    
     //Constructor for initialization
     Student(float maths,float physics,float electronics,float hindi, float english)
     {
@@ -199,8 +212,10 @@ int main()
     Student Aayasha(100,100,100,100,100);
     //lower boudary use cases
     Student Lokendra(33,33,33,33,33);
+    
     rahul.overAllResult("rahul",rahul.checkMathsResult(),rahul.checkPhysicsResult(),rahul.checkElectronicsResult(),rahul.checkHindiResult(),rahul.checkEnglishResult());
     Aayasha.overAllResult("Aayasha",Aayasha.checkMathsResult(),Aayasha.checkPhysicsResult(),Aayasha.checkElectronicsResult(),Aayasha.checkHindiResult(),Aayasha.checkEnglishResult());
     Lokendra.overAllResult("Lokendra",Lokendra.checkMathsResult(),Lokendra.checkPhysicsResult(),Lokendra.checkElectronicsResult(),Lokendra.checkHindiResult(),Lokendra.checkEnglishResult());
-    return 0;
+   
+   return 0;
 }
